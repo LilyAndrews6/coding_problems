@@ -1,0 +1,58 @@
+daily_problems
+================
+2023-12-28
+
+28th December 2023
+
+Compute the running median of a sequence of numbers. That is, given a
+stream of numbers, print out the median of the list so far on each new
+element.
+
+Recall that the median of an even-numbered list is the average of the
+two middle numbers.
+
+For example, given the sequence \[2, 1, 5, 7, 2, 0, 5\], your algorithm
+should print out:
+
+2 1.5 2 3.5 2 2 2
+
+``` r
+seq <- c(5,3,2,4,5,2)
+len <- length(seq)
+new_list <- list()
+for (x in 1:len){
+  new_list = append(new_list, seq[x]) 
+  i <- unlist(new_list)
+  med <-median(i)
+  print(med)
+}
+```
+
+    ## [1] 5
+    ## [1] 4
+    ## [1] 3
+    ## [1] 3.5
+    ## [1] 4
+    ## [1] 3.5
+
+Example given in question:
+
+``` r
+seq <- c(2, 1, 5, 7, 2, 0, 5)
+len <- length(seq)
+new_list <- list()
+for (x in 1:len){
+  new_list = append(new_list, seq[x]) 
+  i <- unlist(new_list)
+  med <-median(i)
+  print(med)
+}
+```
+
+    ## [1] 2
+    ## [1] 1.5
+    ## [1] 2
+    ## [1] 3.5
+    ## [1] 2
+    ## [1] 2
+    ## [1] 2
