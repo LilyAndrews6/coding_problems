@@ -3,6 +3,29 @@ title: "daily_problems"
 output: github_document
 date: "2023-12-28"
 ---
+24th January 2024
+Given a 2D matrix of characters and a target word, write a function that returns whether the word can be found in the matrix by going left-to-right or up-to-down.
+
+For example, given the following matrix:
+[['F','A','C','I'], 
+ ['O','B', 'Q', 'P'],
+ ['A','N', 'O', 'B'],
+ ['M', 'A', 'S', 'S']]
+and the target word 'FOAM' you should return true, since it's the leftmost column. Similarily, given the target word 'MASS', you should return true, since it's the last row.
+
+left to right
+up to down
+
+target <- "FOAM" #target name
+matrix <- matrix(c('F', 'A','C','I', 'O','B', 'Q', 'P', 'A','N', 'O', 'B', 'M', 'A', 'S', 'S'), nrow=4) #create matrix
+for (nrow in 1:nrow(matrix)){
+  col <- ncol(matrix)
+left_right_word <- matrix[nrow,1:col] #check left to right first
+maybe_word <- paste(left_right_word, collapse="") #remove quotes and space
+print(identical(maybe_word, target)) #see if TRUE or FALSE
+left_right_word <- matrix[1:col,nrow] #check up to down
+print(identical(maybe_word, target))  #see if TRUE or FALSE}
+
 28th December 2023
 
 Compute the running median of a sequence of numbers. That is, given a stream of numbers, print out the median of the list so far on each new element.
